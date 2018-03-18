@@ -50,7 +50,7 @@ This package contains a static library version of the nsl library.
 
 %prep
 %setup -qn %{name}-%{version}
-%autopatch -p1
+%apply_patches
 autoreconf -fiv
 
 %build
@@ -61,10 +61,10 @@ export CFLAGS="%{optflags} -fPIC"
 	--enable-shared \
 	--enable-static
 
-%make_build
+%make
 
 %install
-%make_install
+%makeinstall_std
 
 %files -n %{libname}
 %{_libdir}/libnsl.so.%{major}*
