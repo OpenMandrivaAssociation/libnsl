@@ -1,11 +1,11 @@
-%define major 2
+%define major 3
 %define libname %mklibname nsl %{major}
 %define devname %mklibname nsl -d
 %define static %mklibname -d -s nsl
 
 Summary:	Public client interface library for NIS(YP) and NIS+
 Name:		libnsl
-Version:	1.3.0
+Version:	2.0.0
 Release:	1
 License:	BSD and LGPLv2+
 Group:		System/Libraries
@@ -31,9 +31,6 @@ This package contains the shared library for %{name}.
 Summary:	Development files for the libnsl library
 Group:		Development/C
 Requires:	%{libname} >= %{EVRD}
-Conflicts:	glibc < 6:2.17-1.22064.3
-Conflicts:	glibc-devel < 6:2.27-1
-Conflicts:	tirpc-devel < 1.0.2-2
 
 %description -n %{devname}
 This package includes header files and libraries necessary for developing
